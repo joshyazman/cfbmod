@@ -65,7 +65,7 @@ getFPI <- function(yr = format(Sys.Date(), '%Y'), wk = NULL) {
 weekKey <- function(wk, url) {
 
   ddbx <-
-    rvest::html(url) %>%
+    rvest::read_html(url) %>%
     rvest::html_nodes('.tablesm option') %>%
     rvest::html_attrs() %>%
     rvest::pluck(1)
